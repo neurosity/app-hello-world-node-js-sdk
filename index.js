@@ -1,32 +1,36 @@
+const { Notion } = require("@neurosity/notion");
 require('dotenv').config();
 
-const { Notion } = require("@neurosity/notion");
+const deviceId = process.env.DEVICE_ID || "";
+const email = process.env.EMAIL || "";
+const password = process.env.PASSWORD || "";
 
-main();
+const verifyEnvs = (email, password, deviceId) => {
+  const invalidEnv = (env) => {
+    return (env === "");
+  }
+  if (invalidEnv(email) || invalidEnv(password) || invalidEnv(deviceId)) {
+      console.error("Please verify deviceId, email and password are in .env file, quitting...");
+      process.exit(0);
+  }
+}
+verifyEnvs(email, password, deviceId);
+console.log(`${email} attempting to authenticate with ${deviceId}`);
 
-async function main() {
-  const deviceId = process.env.DEVICE_ID;
-  const email = process.env.EMAIL;
-  const password = process.env.PASSWORD;
+const notion = new Notion({
+  deviceId
+});
 
-  console.log(deviceId, email, password);
-
-  const notion = new Notion({
-    deviceId
-  });
-
+const main = async () => {
   await notion.login({
     email,
     password
   })
   .catch(error => {
-    console.log("error", error);
+    console.log(error);
+    process.exit(1);
   });
-  console.log("logged in!");
-
-  await notion.logout()
-  .catch(error => {
-    console.log("error", error);
-  });
-  console.log("logged out!");
+  console.log("Logged in");
 }
+
+main();
