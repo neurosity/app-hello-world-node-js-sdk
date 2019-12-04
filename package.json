@@ -1,0 +1,30 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Hello world application for Notion",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neurosity/app-hello-world-notion-js.git"
+  },
+  "keywords": [
+    "notion",
+    "neurosity",
+    "hello",
+    "world"
+  ],
+  "author": "AJ Keller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neurosity/app-hello-world-notion-js/issues"
+  },
+  "homepage": "https://github.com/neurosity/app-hello-world-notion-js#readme",
+  "dependencies": {
+    "@neurosity/notion": "^3.8.0",
+    "dotenv": "^8.2.0"
+  }
+}
