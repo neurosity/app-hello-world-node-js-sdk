@@ -28,7 +28,7 @@ const main = async () => {
   })
   .catch(error => {
     console.log(error);
-    process.exit(1);
+    throw new Error(error);
   });
   console.log("Logged in");
 
