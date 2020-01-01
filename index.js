@@ -31,6 +31,12 @@ const main = async () => {
     process.exit(1);
   });
   console.log("Logged in");
+
+  notion.calm().subscribe((calm) => {
+    if (calm.probability > 0.3) {
+      console.log("Hello world");
+    }
+  });
 }
 
 main();
