@@ -1,7 +1,7 @@
 {
   "name": "hello-world",
   "version": "1.0.0",
-  "description": "Hello world application for Notion",
+  "description": "Hello world application for Crown",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -12,7 +12,8 @@
     "url": "git+https://github.com/neurosity/app-hello-world-notion-js.git"
   },
   "keywords": [
-    "notion",
+    "crown",
+    "node",
     "neurosity",
     "hello",
     "world"
@@ -24,7 +25,7 @@
   },
   "homepage": "https://github.com/neurosity/app-hello-world-notion-js#readme",
   "dependencies": {
-    "@neurosity/notion": "^3.8.0",
-    "dotenv": "^8.2.0"
+    "@neurosity/sdk": "^6.5.9",
+    "dotenv": "^16.3.0"
   }
 }
